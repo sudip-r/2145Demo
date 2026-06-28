@@ -3,9 +3,10 @@
 function PlayerCollision(){
 	var _collision = false;
 	
-	//Horizontal tiles
+	// Resolve horizontal movement first so diagonal movement can slide along walls.
 	if(tilemap_get_at_pixel(collisionMap, x + hSpeed, y)) 
 	{
+		// Snap back to the collision grid edge before clearing horizontal speed.
 		x -= x mod COLLISION_TILE_SIZE;
 		
 		if(sign(hSpeed) == 1) x += COLLISION_TILE_SIZE - 1;
@@ -14,9 +15,10 @@ function PlayerCollision(){
 	}
 	x += hSpeed;
 	
-	//Vertical tiles
+	// Resolve vertical movement after horizontal movement has updated x.
 	if(tilemap_get_at_pixel(collisionMap, x, y + vSpeed)) 
 	{
+		// Snap back to the collision grid edge before clearing vertical speed.
 		y -= y mod COLLISION_TILE_SIZE;
 		
 		if(sign(vSpeed) == 1) y += COLLISION_TILE_SIZE - 1;
@@ -26,5 +28,6 @@ function PlayerCollision(){
 	
 	y += vSpeed; 
 	
+	// Let callers know whether movement touched a blocked tile.
 	return _collision;
 }

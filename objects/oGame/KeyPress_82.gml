@@ -1,3 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Restart game
+
+// Press R to restart from the initial room.
 game_restart();

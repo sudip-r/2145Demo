@@ -1,4 +1,4 @@
-//Get player input
+// Read held input for movement and actions.
 keyLeft = keyboard_check(vk_left); // or keyboard_check(ord("A")); //for letter
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
@@ -8,8 +8,10 @@ keyRun = keyboard_check(vk_shift);
 keyAttack = keyboard_check(vk_shift);
 keyItem = keyboard_check(vk_control);
 
+// Convert arrow-key input into a direction angle and movement flag.
 inputDirection = point_direction(0,0, keyRight - keyLeft, keyDown - keyUp);
 inputMagnitude = (keyRight - keyLeft != 0) || (keyDown - keyUp != 0);
 
 
+// Run the active player state while gameplay is not paused.
 if(!global.gamePaused) script_execute(state);

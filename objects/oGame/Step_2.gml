@@ -1,9 +1,11 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Toggle pause
+
+// Press Escape to pause or resume gameplay.
 if (keyboard_check_pressed(vk_escape))
 {
 	global.gamePaused = !global.gamePaused;
 	
+	// Pause every instance animation by storing its current image speed.
 	if(global.gamePaused)
 	{
 		with(all)
@@ -14,6 +16,7 @@ if (keyboard_check_pressed(vk_escape))
 	}
 	else 
 	{
+		// Restore each instance's animation speed when unpausing.
 		with(all)
 		{
 			image_speed = gamePausedImageSpeed;
