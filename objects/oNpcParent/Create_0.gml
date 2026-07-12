@@ -13,6 +13,7 @@ patrolIndex = 0;
 patrolPoints = [[x, y]];
 
 // NPC animation is advanced manually so it can stay in sync with patrol state.
+sprite_index = mPlayerWalk;
 image_speed = 0;
 localFrame = 0;
 

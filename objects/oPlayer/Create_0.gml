@@ -2,7 +2,12 @@
 state = PlayerStateFree; 
 
 // Cache the collision tilemap so movement scripts can query blocked tiles.
-collisionMap = layer_tilemap_get_id(layer_get_id("Col"));
+// If a test room has no Col layer, movement should still work without crashing.
+collisionMap = noone;
+if(layer_exists("Col"))
+{
+	collisionMap = layer_tilemap_get_id(layer_get_id("Col"));
+}
 
 // Sprite animation is advanced manually with localFrame.
 image_speed = 0;

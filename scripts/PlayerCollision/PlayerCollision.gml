@@ -3,6 +3,15 @@
 function PlayerCollision(){
 	var _collision = false;
 	
+	// Some work-in-progress rooms may not have a valid collision tilemap yet.
+	// In that case, move freely instead of calling tilemap_get_at_pixel on a bad id.
+	if(collisionMap == noone)
+	{
+		x += hSpeed;
+		y += vSpeed;
+		return false;
+	}
+
 	// Resolve horizontal movement first so diagonal movement can slide along walls.
 	if(tilemap_get_at_pixel(collisionMap, x + hSpeed, y)) 
 	{

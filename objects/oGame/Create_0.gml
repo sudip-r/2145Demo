@@ -1,6 +1,9 @@
 // Seed GameMaker's random number generator for non-repeatable random values.
 randomize();
 
+// Draw this persistent controller after gameplay objects so HUD/dialogue stays on top.
+depth = -100000;
+
 // Global pause flag checked by player and other gameplay scripts.
 global.gamePaused = false;
 
