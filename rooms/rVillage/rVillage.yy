@@ -7,6 +7,10 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_37F1B392","path":"rooms/rVillage/rVillage.yy",},
+    {"name":"inst_NPC_MAYA","path":"rooms/rVillage/rVillage.yy",},
+    {"name":"inst_NPC_BIREN","path":"rooms/rVillage/rVillage.yy",},
+    {"name":"inst_NPC_AMA","path":"rooms/rVillage/rVillage.yy",},
+    {"name":"inst_NPC_TIKA","path":"rooms/rVillage/rVillage.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -67,6 +71,10 @@
         ],"TileDataFormat":1,},"tilesetId":{"name":"tTiles","path":"tilesets/tTiles/tTiles.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":false,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_37F1B392","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":true,"inheritedItemId":{"name":"inst_37F1B392","path":"rooms/rParent/rParent.yy",},"inheritItemSettings":false,"isDnd":false,"name":"inst_37F1B392","objectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_NPC_MAYA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_NPC_MAYA","objectId":{"name":"oNpcMaya","path":"objects/oNpcMaya/oNpcMaya.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1184.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_NPC_BIREN","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_NPC_BIREN","objectId":{"name":"oNpcBiren","path":"objects/oNpcBiren/oNpcBiren.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":928.0,"y":800.0,},
+        {"$GMRInstance":"v4","%Name":"inst_NPC_AMA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_NPC_AMA","objectId":{"name":"oNpcAma","path":"objects/oNpcAma/oNpcAma.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":496.0,},
+        {"$GMRInstance":"v4","%Name":"inst_NPC_TIKA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_NPC_TIKA","objectId":{"name":"oNpcTika","path":"objects/oNpcTika/oNpcTika.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":608.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Trees3","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Trees3","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":128,"SerialiseWidth":128,"TileCompressedData":[
           -54,0,-53,-2147483648,21,2425,2426,2427,2428,2429,2430,-2147483648,2425,2426,2427,2428,2429,2430,2936,

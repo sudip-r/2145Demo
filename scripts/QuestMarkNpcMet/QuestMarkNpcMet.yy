@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"QuestMarkNpcMet",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"QuestMarkNpcMet",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

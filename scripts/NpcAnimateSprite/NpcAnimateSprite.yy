@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NpcAnimateSprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NpcAnimateSprite",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

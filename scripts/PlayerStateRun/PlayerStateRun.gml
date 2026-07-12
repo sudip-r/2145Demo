@@ -29,9 +29,21 @@ function PlayerStateRun(){
 
 	PlayerAnimateSprite();
 
-	// Holding space starts the plough action from the run state too.
+	// Space first talks to nearby NPCs, then falls back to the plough action.
 	if(keyActivate)
 	{
+		// Search in front of the moving player for an NPC interaction target.
+		var _npcTarget = NpcFindInteractTarget(id);
+
+		// If an NPC was found, leave run state and trigger their placeholder interaction.
+		if(_npcTarget != noone)
+		{
+			state = PlayerStateFree;
+			NpcInteract(_npcTarget, id);
+			exit;
+		}
+
+		// No NPC interaction was found, so Space keeps its original plough behavior.
 		state = PlayerStatePlough;
 		moveDistanceRemaining = distancePlough;
 	}
