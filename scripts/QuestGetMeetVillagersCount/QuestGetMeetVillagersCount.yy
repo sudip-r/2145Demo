@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"QuestGetMeetVillagersCount",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"QuestGetMeetVillagersCount",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

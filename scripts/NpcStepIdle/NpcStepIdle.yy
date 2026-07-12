@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NpcStepIdle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NpcStepIdle",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

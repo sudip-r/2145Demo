@@ -5,7 +5,6 @@ Thumbs.db
 Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
- 
 # Dump file
 *.stackdump
  
@@ -57,6 +56,10 @@ Temporary Items
 # GameMaker temporary files
 *.resource_order
 *.old
+
+#docs
+docs/*
+docs
 
 # GMRT build directory
 Build

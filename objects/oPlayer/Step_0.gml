@@ -1,9 +1,11 @@
-// Read held input for movement and actions.
+// Read movement input and one-shot action presses.
 keyLeft = keyboard_check(vk_left); // or keyboard_check(ord("A")); //for letter
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
 keyDown = keyboard_check(vk_down);
-keyActivate = keyboard_check(vk_space);
+
+// Space is pressed-only so NPC talk/plough actions trigger once per key press.
+keyActivate = keyboard_check_pressed(vk_space);
 keyRun = keyboard_check(vk_shift);
 keyAttack = keyboard_check(vk_shift);
 keyItem = keyboard_check(vk_control);

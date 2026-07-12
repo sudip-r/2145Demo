@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NpcInteract",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NpcInteract",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
