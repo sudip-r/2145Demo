@@ -4,6 +4,10 @@
 // handle is refreshed in Step after room changes.
 cam = view_camera[0];
 
+// Track the room as well as the camera handle because a persistent camera object
+// can enter a new room where GameMaker reuses the same view_camera[0] handle.
+currentRoom = room;
+
 // Follow the player object when it exists in the current room.
 follow = oPlayer;
 
