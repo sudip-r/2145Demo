@@ -66,6 +66,7 @@
     {"id":{"name":"sHouses1","path":"sprites/sHouses1/sHouses1.yy",},},
     {"id":{"name":"sPlayer","path":"sprites/sPlayer/sPlayer.yy",},},
     {"id":{"name":"sPlayerPlough","path":"sprites/sPlayerPlough/sPlayerPlough.yy",},},
+    {"id":{"name":"sPlayerWalk","path":"sprites/sPlayerWalk/sPlayerWalk.yy",},},
     {"id":{"name":"sTiles","path":"sprites/sTiles/sTiles.yy",},},
     {"id":{"name":"tCenterTreeBase","path":"tilesets/tCenterTreeBase/tCenterTreeBase.yy",},},
     {"id":{"name":"tCol","path":"tilesets/tCol/tCol.yy",},},

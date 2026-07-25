@@ -23,6 +23,6 @@ distancePlough = 52;
 
 // Sprites used by the player state scripts.
 spritePlough = sPlayerPlough;
-spriteWalk = mPlayerWalk;
-spriteIdle = mPlayer;
-spriteRun = mPlayerWalk;
+spriteWalk = sPlayerWalk;
+spriteIdle = sPlayer;
+spriteRun = sPlayerWalk;
