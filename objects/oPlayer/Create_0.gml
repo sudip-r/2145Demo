@@ -16,10 +16,15 @@ localFrame = 0;
 // Movement speeds for each player action.
 hSpeed = 0;
 vSpeed = 0;
-speedWalk = 4.5;
+speedWalk = 2.5;
 speedRun = 6.5;
 speedPlough = 1.0;
 distancePlough = 52;
+
+// NPC collision uses a small feet/body box instead of the full sprite image.
+// This prevents the player from standing inside villagers while still allowing natural sprite overlap.
+npcCollisionRadiusX = 18;
+npcCollisionRadiusY = 12;
 
 // Attack (weapon) action timing, mirroring the plough action above.
 speedAttack = 1.6;

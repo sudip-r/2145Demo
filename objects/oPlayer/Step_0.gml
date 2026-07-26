@@ -29,3 +29,7 @@ if(!global.gamePaused)
 
 	script_execute(state);
 }
+
+// Use the player's feet position as draw priority.
+// GameMaker draws lower depth values later, so a larger y should appear in front.
+depth = -floor(y);

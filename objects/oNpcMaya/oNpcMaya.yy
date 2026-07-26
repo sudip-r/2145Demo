@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"mPlayerWalk",
-    "path":"sprites/mPlayerWalk/mPlayerWalk.yy",
+    "name":"sNPCMaya",
+    "path":"sprites/sNPCMaya/sNPCMaya.yy",
   },
   "spriteMaskId":{
     "name":"sPlayer",

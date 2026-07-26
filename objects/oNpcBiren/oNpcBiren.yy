@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"mPlayerWalk",
-    "path":"sprites/mPlayerWalk/mPlayerWalk.yy",
+    "name":"sNPCBiren",
+    "path":"sprites/sNPCBiren/sNPCBiren.yy",
   },
   "spriteMaskId":{
     "name":"sPlayer",

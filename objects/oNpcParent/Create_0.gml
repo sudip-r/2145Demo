@@ -13,7 +13,7 @@ patrolIndex = 0;
 patrolPoints = [[x, y]];
 
 // NPC animation is advanced manually so it can stay in sync with patrol state.
-sprite_index = mPlayerWalk;
+//sprite_index = mPlayerWalk;
 image_speed = 0;
 localFrame = 0;
 
@@ -23,3 +23,7 @@ messageTimer = 0;
 
 // Default facing direction. GameMaker directions use 0=right, 90=up, 180=left, 270=down.
 direction = 270;
+
+// Start with Y-sort depth so NPCs overlap correctly before their first Step event.
+// Lower depth values draw later, so objects lower on the screen appear in front.
+depth = -floor(y);
