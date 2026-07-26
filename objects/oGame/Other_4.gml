@@ -10,3 +10,9 @@ if(layer_exists("Trees")) layer_set_visible("Trees", true);
 if(layer_exists("Buildings")) layer_set_visible("Buildings", true);
 if(layer_exists("Road")) layer_set_visible("Road", true);
 if(layer_exists("Objects")) layer_set_visible("Objects", true);
+
+// Turn the Garbage tile layer into collectible piles for the temple cleanup quest.
+if(layer_exists("Garbage"))
+{
+	GarbageSpawnPiles();
+}

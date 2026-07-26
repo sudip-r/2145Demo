@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GarbageSpawnPiles",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GarbageSpawnPiles",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

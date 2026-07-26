@@ -27,6 +27,23 @@ if(!_dialogueOpen && instance_exists(oPlayer))
 	_drawInteractPrompt = (_interactTarget == id);
 }
 
+// Show a quest-available marker over NPCs who currently have something new to offer.
+// Unlike the name label, this is visible from anywhere so a new quest reads from a distance.
+var _drawQuestMarker = !_dialogueOpen && QuestTempleCleanupIsAvailable(dialogueId);
+
+if(_drawQuestMarker)
+{
+	var _markerY = y - sprite_get_bbox_bottom(sprite_index) - 64;
+
+	draw_set_alpha(1);
+	draw_set_color(c_yellow);
+	draw_circle(x, _markerY, 10, false);
+	draw_set_color(c_black);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(x, _markerY, "!");
+}
+
 // Draw a compact name tag above nearby NPCs.
 if(_drawNameLabel)
 {

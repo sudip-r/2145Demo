@@ -21,6 +21,15 @@ speedRun = 6.5;
 speedPlough = 1.0;
 distancePlough = 52;
 
+// Attack (weapon) action timing, mirroring the plough action above.
+speedAttack = 1.6;
+distanceAttack = 40;
+
+// Strength (stamina) tuning: running and tool/weapon use both cost strength.
+strengthDrainRun = 0.15;
+strengthRegenPerFrame = 0.1;
+strengthCostAction = 8;
+
 // Sprites used by the player state scripts.
 spritePlough = sPlayerPlough;
 spriteWalk = sPlayerWalk;

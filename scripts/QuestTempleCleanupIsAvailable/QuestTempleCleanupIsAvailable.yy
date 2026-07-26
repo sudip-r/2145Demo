@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"QuestTempleCleanupIsAvailable",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"QuestTempleCleanupIsAvailable",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

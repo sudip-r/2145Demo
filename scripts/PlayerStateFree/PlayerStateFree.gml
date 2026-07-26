@@ -2,7 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerStateFree(){
 	// Holding run while moving immediately hands control to the run state.
-	if(keyRun && inputMagnitude != 0)
+	// Blocked while exhausted, otherwise this would bounce straight back to
+	// PlayerStateRun (which drops out at 0 strength) and recurse forever in one frame.
+	if(keyRun && inputMagnitude != 0 && !global.playerExhausted)
 	{
 		state = PlayerStateRun;
 		PlayerStateRun();
@@ -29,7 +31,16 @@ function PlayerStateFree(){
 
 	PlayerAnimateSprite();
 
-	// Space first talks to nearby NPCs, then falls back to the plough action.
+	// Strength slowly recovers while walking or standing still.
+	global.playerStrength = min(global.playerStrengthMax, global.playerStrength + strengthRegenPerFrame);
+
+	// Only lift the exhaustion lock once strength has fully refilled.
+	if(global.playerStrength >= global.playerStrengthMax)
+	{
+		global.playerExhausted = false;
+	}
+
+	// Space first talks to nearby NPCs, then falls back to the active inventory item.
 	if(keyActivate)
 	{
 		// Search in front of the player for an NPC interaction target.
@@ -42,9 +53,8 @@ function PlayerStateFree(){
 			exit;
 		}
 
-		// No NPC interaction was found, so Space keeps its original plough behavior.
-		state = PlayerStatePlough;
-		moveDistanceRemaining = distancePlough;
+		// No NPC nearby - let the active inventory slot decide what the action button does.
+		PlayerUseActiveItem();
 	}
 
 }

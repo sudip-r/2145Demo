@@ -16,4 +16,16 @@ inputMagnitude = (keyRight - keyLeft != 0) || (keyDown - keyUp != 0);
 
 
 // Run the active player state while gameplay is not paused.
-if(!global.gamePaused) script_execute(state);
+if(!global.gamePaused)
+{
+	// Number keys 1-N select the active inventory slot directly.
+	for(var _i = 0; _i < INVENTORY_SLOT_COUNT; _i++)
+	{
+		if(keyboard_check_pressed(ord("1") + _i))
+		{
+			global.playerActiveSlot = _i;
+		}
+	}
+
+	script_execute(state);
+}

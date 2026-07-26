@@ -14,8 +14,11 @@ function NpcInteract(_npc, _source){
 		// Face the player during the interaction for readable staging.
 		direction = point_direction(x, y, _sourceX, _sourceY);
 
-		// Pull dialogue from the database so NPC objects stay focused on identity and movement.
-		var _lines = DialogueGetLines(dialogueId);
+		// Quest dialogue (if any currently applies to this NPC) takes priority over normal lines.
+		var _lines = NpcGetTempleQuestLines(dialogueId);
+
+		// Fall back to the normal dialogue database so NPC objects stay focused on identity and movement.
+		if(_lines == undefined) _lines = DialogueGetLines(dialogueId);
 		
 		// Mark this villager as met for the first demo quest.
 		QuestMarkNpcMet(dialogueId);

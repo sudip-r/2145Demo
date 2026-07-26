@@ -32,6 +32,12 @@ if(global.questMeetVillagersCompleteTimer > 0)
 	global.questMeetVillagersCompleteTimer--;
 }
 
+// Same fade-out countdown for the temple cleanup quest's completion toast.
+if(global.questTempleCleanupCompleteTimer > 0)
+{
+	global.questTempleCleanupCompleteTimer--;
+}
+
 // Press Escape to pause or resume gameplay.
 if (keyboard_check_pressed(vk_escape))
 {
