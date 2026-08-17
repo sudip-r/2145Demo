@@ -7,3 +7,7 @@
 // The modulo wrap keeps 360 degrees mapped back to 0.
 #macro CARDINAL_DIRECTION ((round(direction / 90) + 4) mod 4)
 #macro ROOM_START rVillage
+
+//Game save system
+#macro SAVE_FILE_NAME "savegame.json"
+#macro SAVE_FORMAT_VERSION 1

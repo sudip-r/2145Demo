@@ -1,6 +1,3 @@
-#macro SAVE_FILE_NAME "savegame.json"
-#macro SAVE_FORMAT_VERSION 1
-
 /// @function SaveGameExists()
 /// @description Returns true when the single save slot exists.
 function SaveGameExists()
