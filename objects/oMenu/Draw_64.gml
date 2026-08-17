@@ -18,13 +18,23 @@ for (var i = 0; i < array_length(menu_items); i++)
     var x2 = button_x2 * scale_x;
     var y2 = (button_y[i] + button_h) * scale_y;
     var active = (i == menu_selected);
+    var enabled = (i != 1) || load_available;
 
     draw_set_alpha(active ? 0.92 : 0.76);
     draw_set_color(c_black);
     draw_roundrect(x1, y1, x2, y2, false);
 
     draw_set_alpha(1);
-    draw_set_color(active ? c_yellow : c_white);
+
+    if(!enabled)
+    {
+        draw_set_color(c_gray);
+    }
+    else
+    {
+        draw_set_color(active ? c_yellow : c_white);
+    }
+
     draw_roundrect(x1, y1, x2, y2, true);
     draw_text((x1 + x2) * 0.5, (y1 + y2) * 0.5, menu_items[i]);
 }
@@ -77,6 +87,15 @@ if (options_open)
     draw_roundrect(bx1, by1, bx2, by2, true);
     draw_text((bx1 + bx2) * 0.5, (by1 + by2) * 0.5, "Back");
     draw_text(gui_w * 0.5, 505 * scale_y, "Left/Right: Adjust    M: Mute    Esc: Back");
+}
+
+if(menu_notice_timer > 0)
+{
+    draw_set_font(fStory);
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_set_color(c_white);
+    draw_text(gui_w * 0.5, gui_h - 34, menu_notice);
 }
 
 // Restore defaults for later Draw GUI events.

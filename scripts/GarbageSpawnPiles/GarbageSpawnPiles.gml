@@ -98,9 +98,29 @@ function GarbageSpawnPiles(){
 			_pile.boundsWidth = _boundsWidth;
 			_pile.boundsHeight = _boundsHeight;
 			_pile.collectRadius = max(_boundsWidth, _boundsHeight) * 0.5 + 40;
+			// The room and minimum tile coordinate form a stable world-object id.
+			_pile.saveId = room_get_name(room) + ":" + string(_minCellX) + ":" + string(_minCellY);
 
 			global.questGarbageTotal++;
+
+			// Reapply previously collected world state to the new room instance.
+			if(SaveArrayContains(global.clearedGarbageIds, _pile.saveId))
+			{
+				for(var _savedI = 0; _savedI < array_length(_cellsX); _savedI++)
+				{
+					tilemap_set(_tilemap, 0, _cellsX[_savedI], _cellsY[_savedI]);
+				}
+
+				_pile.collected = true;
+				global.questGarbageCollected++;
+			}
 		}
+	}
+
+	if(global.questGarbageTotal > 0
+	&& global.questGarbageCollected >= global.questGarbageTotal)
+	{
+		global.questTempleCleanupCleared = true;
 	}
 
 	ds_grid_destroy(_visited);

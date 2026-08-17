@@ -9,6 +9,13 @@ var scale_y = gui_h / design_h;
 var mx = device_mouse_x_to_gui(0) / scale_x;
 var my = device_mouse_y_to_gui(0) / scale_y;
 
+load_available = SaveGameExists();
+
+if(menu_notice_timer > 0)
+{
+    menu_notice_timer--;
+}
+
 if (options_open)
 {
     // Slider bounds in design space.
@@ -117,15 +124,29 @@ if (mouse_selected || keyboard_selected)
 {
     switch (menu_selected)
     {
-        case 0: // Start
+        case 0: // Start a new game and show the story.
+            global.load_requested = false;
             room_goto(rStory);
             break;
 
-        case 1: // Options
+        case 1: // Load Game
+            if(load_available)
+            {
+                global.load_requested = true;
+                room_goto(rInit);
+            }
+            else
+            {
+                menu_notice = "No save game found";
+                menu_notice_timer = FRAME_RATE * 2;
+            }
+            break;
+
+        case 2: // Options
             options_open = true;
             break;
 
-        case 2: // Exit
+        case 3: // Exit
             game_end();
             break;
     }

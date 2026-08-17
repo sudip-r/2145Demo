@@ -1,3 +1,10 @@
+// Read the title-screen request before normal defaults are initialized.
+var _shouldLoad =
+	variable_global_exists("load_requested") &&
+	global.load_requested;
+
+global.load_requested = false;
+
 // Seed GameMaker's random number generator for non-repeatable random values.
 randomize();
 
@@ -6,6 +13,16 @@ depth = -100000;
 
 // Global pause flag checked by player and other gameplay scripts.
 global.gamePaused = false;
+
+// Pause menu state owned by persistent oGame.
+pauseItems = ["Resume", "Save Game", "Main Menu"];
+pauseSelected = 0;
+pauseHovered = -1;
+pauseNotice = "";
+pauseNoticeTimer = 0;
+
+// Loaded position is applied after the saved room creates oPlayer.
+global.pendingLoad = undefined;
 
 // Dialogue globals are initialized here because oGame persists across rooms.
 global.dialogueActive = false;
@@ -39,6 +56,9 @@ global.questTempleCleanupCompleteTimer = 0;
 global.questGarbageTotal = 0;
 global.questGarbageCollected = 0;
 
+// Stable IDs of garbage piles that have already been removed.
+global.clearedGarbageIds = [];
+
 // Player stats. Strength drains from running/actions below; HP has no drain source yet (added later).
 global.playerHp = 100;
 global.playerHpMax = 100;
@@ -59,5 +79,16 @@ global.playerInventorySlots[2] = {itemId: "bread", count: 3};
 // Create one persistent camera controller before moving into the start room.
 global.iCamera = instance_create_layer(0, 0, layer, oCamera);
 
-// Leave the init room and start the playable room.
-room_goto(ROOM_START);
+// Load requests replace the defaults above, then request the saved room.
+// A missing, incompatible, or corrupt save safely starts a new game.
+if(_shouldLoad)
+{
+	if(!SaveGameLoad())
+	{
+		room_goto(ROOM_START);
+	}
+}
+else
+{
+	room_goto(ROOM_START);
+}

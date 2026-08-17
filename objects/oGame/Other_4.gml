@@ -16,3 +16,25 @@ if(layer_exists("Garbage"))
 {
 	GarbageSpawnPiles();
 }
+
+// Apply staged load data only after the room has created oPlayer.
+if(is_struct(global.pendingLoad)
+&& global.pendingLoad.active
+&& instance_exists(oPlayer))
+{
+	var _player = instance_find(oPlayer, 0);
+
+	_player.x = clamp(global.pendingLoad.playerX, 0, room_width);
+	_player.y = clamp(global.pendingLoad.playerY, 0, room_height);
+	_player.direction = global.pendingLoad.playerDirection;
+
+	global.pendingLoad = undefined;
+	global.gamePaused = false;
+
+	// Force the persistent camera to snap to the restored position.
+	if(instance_exists(oCamera))
+	{
+		var _camera = instance_find(oCamera, 0);
+		_camera.cameraInitialized = false;
+	}
+}
