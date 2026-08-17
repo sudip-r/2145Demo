@@ -1234,8 +1234,8 @@
   ],
   "name":"rVillage",
   "parent":{
-    "name":"Roooms",
-    "path":"folders/Roooms.yy",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":{
     "name":"rParent",

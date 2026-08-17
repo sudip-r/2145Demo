@@ -30,6 +30,11 @@ if(_collecting)
 		collected = true;
 		global.questGarbageCollected++;
 
+		if(!SaveArrayContains(global.clearedGarbageIds, saveId))
+		{
+			array_push(global.clearedGarbageIds, saveId);
+		}
+
 		// All piles cleared - the quest giver has a thank-you waiting on the next chat.
 		if(global.questGarbageCollected >= global.questGarbageTotal)
 		{

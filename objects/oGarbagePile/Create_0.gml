@@ -4,6 +4,9 @@ collected = false;
 collectProgress = 0;
 collectDurationFrames = FRAME_RATE * 3;
 
+// Assigned by GarbageSpawnPiles from the pile's first tile coordinate.
+saveId = "";
+
 // Tilemap id and tile cells this pile erases from the Garbage layer once collected.
 garbageTilemap = noone;
 tileCellsX = [];
